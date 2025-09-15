@@ -1,5 +1,9 @@
 
 Sistema de gestión integral para aerolíneas desarrollado con Spring Boot. Permite administrar aerolíneas, aviones, pilotos, pasajeros y vuelos con una arquitectura REST API robusta y escalable.
+
+-- ## Estado
+- En desarrollo (30-35%) de avance
+
 - ## 🛠️ Stack Técnico
 - **Backend**: Java 17, Spring Boot, Spring Data JPA
 - **Base de Datos**: PostgreSQL
