@@ -1,15 +1,15 @@
 package com.example.demo.pasajero;
 
-import com.example.demo.respuesta.CuerpoRespuesta;
+import com.example.demo.respuesta.CuerpoResponse;
 
 import java.util.List;
 
 public interface IPasajeroService {
-    public CuerpoRespuesta<PasajeroEntity> guardarPasajero(PasajeroEntity pasajeroEntity);
-    public CuerpoRespuesta<PasajeroEntity> buscarPasajeroPorId(Long id);
-    public CuerpoRespuesta<PasajeroEntity> actualizarPasajero(PasajeroEntity pasajeroEntity);
-    public CuerpoRespuesta<PasajeroEntity> eliminarPasajero(Long id);
-    public List<CuerpoRespuesta<PasajeroEntity>> listarPasajeros();
+    public CuerpoResponse<PasajeroResponse> guardarPasajero(PasajeroRequest pasajeroRequest);
+    public CuerpoResponse<PasajeroResponse> buscarPasajeroPorId(Long id);
+    public CuerpoResponse<PasajeroResponse> actualizarPasajero(Long id, PasajeroRequest pasajeroRequest);
+    public CuerpoResponse<PasajeroResponse> eliminarPasajero(Long id);
+    public List<CuerpoResponse<PasajeroResponse>> listarPasajeros();
 
 
 }

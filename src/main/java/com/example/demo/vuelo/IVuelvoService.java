@@ -1,11 +1,13 @@
 package com.example.demo.vuelo;
 
-import com.example.demo.respuesta.CuerpoRespuesta;
+import com.example.demo.respuesta.CuerpoResponse;
 
+import java.time.LocalDate;
 import java.util.List;
 
 public interface IVuelvoService {
-    public CuerpoRespuesta<VueloResponse> guardarVuelo(VueloRequest vueloRequest);
-    public CuerpoRespuesta<VueloEntity> buscarVueloPorId(Long id);
-    public List<CuerpoRespuesta<VueloEntity>> listarVuelos();
+    public CuerpoResponse<VueloResponse> guardarVuelo(VueloRequest vueloRequest);
+    public CuerpoResponse<VueloResponse> buscarVueloPorId(Long id);
+    public CuerpoResponse<List<VueloResponse>> buscarVueloPorFechaSalida(LocalDate fechaSalida);
+    public CuerpoResponse<List<VueloResponse>> listarVuelos();
 }

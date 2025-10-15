@@ -9,4 +9,5 @@ import lombok.Setter;
 public class PilotoRequest {
     private String nombres;
     private String apellidos;
+    private Long idAerolinea;
 }

@@ -1,12 +1,12 @@
 package com.example.demo.avion;
 
-import com.example.demo.respuesta.CuerpoRespuesta;
+import com.example.demo.respuesta.CuerpoResponse;
 
 import java.util.List;
 
 public interface IAvionService {
-    public CuerpoRespuesta<AvionEntity> guardarAvion(AvionRequest avionRequest);
-    public CuerpoRespuesta<AvionEntity> buscarAvionPorId(Long id);
+    public CuerpoResponse<AvionResponse> guardarAvion(AvionRequest avionRequest);
+    public CuerpoResponse<AvionResponse> buscarAvionPorId(Long id);
 
-    public CuerpoRespuesta<List<AvionEntity>> listarAviones();
+    public CuerpoResponse<List<AvionResponse>> listarAviones();
 }

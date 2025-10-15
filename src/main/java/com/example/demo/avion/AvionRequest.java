@@ -9,7 +9,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class AvionRequest {
-    private Long id;
     private short capacidad;
     private short peso;
     private String modelo;

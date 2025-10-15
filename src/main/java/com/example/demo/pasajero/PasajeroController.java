@@ -1,6 +1,6 @@
 package com.example.demo.pasajero;
 
-import com.example.demo.respuesta.CuerpoRespuesta;
+import com.example.demo.respuesta.CuerpoResponse;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,12 +10,12 @@ import org.springframework.web.bind.annotation.*;
 public class PasajeroController {
     private PasajeroServiceImpl pasajeroService;
     @PostMapping("/guardar")
-    public CuerpoRespuesta<PasajeroEntity> guardar(@RequestBody PasajeroEntity pasajeroEntity){
-        return this.pasajeroService.guardarPasajero(pasajeroEntity);
+    public CuerpoResponse<PasajeroResponse> guardar(@RequestBody PasajeroRequest pasajeroRequest){
+        return this.pasajeroService.guardarPasajero(pasajeroRequest);
     }
 
     @GetMapping("/buscarPorId/{id}")
-    public CuerpoRespuesta<PasajeroEntity> buscar(@PathVariable Long id){
+    public CuerpoResponse<PasajeroResponse> buscar(@PathVariable Long id){
         return this.pasajeroService.buscarPasajeroPorId(id);
     }
 

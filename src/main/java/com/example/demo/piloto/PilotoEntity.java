@@ -1,5 +1,6 @@
 package com.example.demo.piloto;
 
+import com.example.demo.aerolinea.AerolineaEntity;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,7 +12,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Entity
 @Table(name = "pilotos")
-public class Piloto {
+public class PilotoEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="piloto_id")
@@ -20,4 +21,7 @@ public class Piloto {
     private String nombre;
     private String apellido;
     private Boolean estado;
+    @ManyToOne
+    @JoinColumn(name = "aerolinea_id")
+    private AerolineaEntity aerolineaEntity;
 }

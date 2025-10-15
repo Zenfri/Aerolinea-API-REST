@@ -1,10 +1,7 @@
 package com.example.demo.avion;
 
-import com.example.demo.respuesta.CuerpoRespuesta;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.demo.respuesta.CuerpoResponse;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/v1/avion")
@@ -16,8 +13,14 @@ public class AvionController {
     }
 
     @PostMapping("/guardar")
-    public CuerpoRespuesta<AvionEntity> guardar(@RequestBody AvionRequest avionRequest){
+    public CuerpoResponse<AvionResponse> guardar(@RequestBody AvionRequest avionRequest){
         return this.avionServiceImpl.guardarAvion(avionRequest);
+    }
+
+
+    @GetMapping("/buscarPorId/{id}")
+    public CuerpoResponse<AvionResponse> buscarPorId(@PathVariable Long id){
+        return this.avionServiceImpl.buscarAvionPorId(id);
     }
 
 

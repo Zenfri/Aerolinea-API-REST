@@ -4,6 +4,8 @@ import com.example.demo.aerolinea.AerolineaEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
+
 @Getter @Setter @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -18,7 +20,13 @@ public class AvionEntity {
     private short peso;
     private String modelo;
 
+    @Column(name = "tiempo_creacion")
+    private LocalDateTime tiempoCreacion;
+    @Column(name = "tiempo_modificacion")
+    private LocalDateTime tiempoModificacion;
+
     @ManyToOne
     @JoinColumn(name = "aerolinea_id") // columna fk
     private AerolineaEntity aerolineaEntity;
+
 }
